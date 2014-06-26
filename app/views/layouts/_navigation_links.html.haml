@@ -1,0 +1,9 @@
+- if current_user
+  Welcome
+  = succeed "!" do
+    %strong
+      = current_user.name
+  = link_to "Sign out", signout_path
+- else
+  = link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in"
+  = link_to "Sign in with Twitter", "/auth/twitter"
