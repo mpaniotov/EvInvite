@@ -5,5 +5,5 @@
       = current_user.name
   = link_to "Sign out", signout_path
 - else
-  = link_to  " Sign in with facebook", user_omniauth_authorize_path(:facebook)
-  = link_to "Sign in with Twitter", "/auth/twitter"
+  = link_to  "Sign in with facebook", user_omniauth_authorize_path(:facebook)
+  = link_to "Sign in with Twitter",  user_omniauth_authorize_path(:twitter)

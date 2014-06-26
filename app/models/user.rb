@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable,  :omniauthable, :omniauth_providers => [:facebook]
+         :recoverable, :rememberable, :trackable,  :omniauthable, :omniauth_providers => [:facebook, :twitter]
   has_many :events
 
 
@@ -19,17 +19,30 @@ class User < ActiveRecord::Base
                           provider: auth.provider,
                           uid: auth.uid,
                           email: auth.info.email,
-                          password: Devise.friendly_token[ 0, 20 ] ).tap {|u|
-          logger.info "*" * 25 + "USER INFO " + "*" * 25
-
-          logger.info auth
-
-          logger.info "*" * 50
-
-
-        }
+                          password: Devise.friendly_token[ 0, 20 ] )
       end
     end
+  end
+
+  def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth[:provider], :uid => auth[:uid].to_s).first
+    unless user
+      user=User.create(
+          :name => auth[:name],
+          :provider => auth[:provider],
+          :uid => auth[:uid],
+          :password=> Devise.friendly_token[0,20]
+      )
+    end
+    user
+  end
+
+  def self.build_twitter_auth_cookie_hash data
+    {
+        :provider => data.provider, :uid => data.uid.to_i,
+        :access_token => data.credentials.token, :access_secret => data.credentials.secret,
+        :name => data.info.name,
+    }
   end
 
 end
