@@ -1,0 +1,25 @@
+
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: chat_development
+  pool: 5
+  username: lukjanenko
+  password: liv__210890
+
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: chat_test
+  pool: 5
+  username: lukjanenko
+  password: liv__210890
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: chat_production
+  pool: 5
+  username: lukjanenko
+  password: liv__210890
+  template: template0
