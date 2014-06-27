@@ -1,0 +1,51 @@
+.container
+  #slider.col-sm-6
+    .bs-example
+      #myCarousel.carousel.slide{"data-interval" => "3000", "data-ride" => "carousel"}
+        / Carousel indicators
+        %ol.carousel-indicators
+          %li.active{"data-slide-to" => "0", "data-target" => "#myCarousel"}
+          %li{"data-slide-to" => "1", "data-target" => "#myCarousel"}
+          %li{"data-slide-to" => "2", "data-target" => "#myCarousel"}
+        / Carousel items
+        .carousel-inner
+          .active.item
+            %h2 Slide 1
+            .carousel-caption
+              %h3 First slide label
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          .item
+            %h2 Slide 2
+            .carousel-caption
+              %h3 Second slide label
+              %p Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          .item
+            %h2 Slide 3
+            .carousel-caption
+              %h3 Third slide label
+              %p Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+        / Carousel nav
+        %a.carousel-control.left{"data-slide" => "prev", :href => "#myCarousel"}
+          %span.glyphicon.glyphicon-chevron-left
+        %a.carousel-control.right{"data-slide" => "next", :href => "#myCarousel"}
+          %span.glyphicon.glyphicon-chevron-right
+  .col-sm-6
+    .sign_in
+      %h2 Sign in
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        %div
+          = f.label :email
+          %br/
+          = f.email_field :email, autofocus: true
+        %div
+          = f.label :password
+          %br/
+          = f.password_field :password, autocomplete: "off"
+        - if devise_mapping.rememberable?
+          %div
+            = f.check_box :remember_me
+            = f.label :remember_me
+        %div= f.submit "Sign in"
+      = render "devise/shared/links"
+%hr
+
