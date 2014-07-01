@@ -12,9 +12,8 @@
         %span{"aria-hidden"=>"true", "class"=>"icon-venue", id:"logo"}
     .navbar-header
       - if current_user
-        = succeed "!" do
-          %strong
-            = current_user.name
+        %strong
+          = "Welcome, #{current_user.name}!"
         = link_to "Sign out", destroy_user_session_path, :method => :delete
       - else
         = link_to user_omniauth_authorize_path(:facebook), class: 'navbar-brand' do
