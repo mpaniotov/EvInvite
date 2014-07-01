@@ -1,3 +1,39 @@
-// Place all the styles related to the User controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+//@font-face {
+//  font-family: aqua;
+//  src: font_url('/assets/fonts/aqua.ttf') format('truetype');
+//}
+body{
+//  font-family: aqua;
+}
+.container{
+//  margin-top:50px;
+
+}
+#slider {
+  padding-right: 50px;
+  width: 70%;
+}
+#slider h2{
+  margin: 0;
+  color: #666;
+  padding-top: 90px;
+  font-size: 52px;
+  font-family: "trebuchet ms", sans-serif;
+}
+.item{
+  background: #333;
+  text-align: center;
+  height: 300px !important;
+}
+.carousel{
+  margin-top: 20px;
+}
+.bs-example{
+  margin: 20px;
+}
+#home {
+  float: left;
+}
+#logo{
+  padding-left: 15px;
+}

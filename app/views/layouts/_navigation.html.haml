@@ -1,13 +1,29 @@
 -# navigation styled for Bootstrap 3.0
 %nav.navbar.navbar-default.navbar-fixed-top
   .container
-    .navbar-header
+    .navbar-header#home
       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      = link_to 'Home', root_path, class: 'navbar-brand'
+
+      = link_to root_path, class: 'navbar-brand' do
+        %span{"aria-hidden"=>"true", "class"=>"icon-venue", id:"logo"}
+    .navbar-header
+      - if current_user
+        = succeed "!" do
+          %strong
+            = current_user.name
+        = link_to "Sign out", destroy_user_session_path, :method => :delete
+      - else
+        = link_to user_omniauth_authorize_path(:facebook), class: 'navbar-brand' do
+          %span{"aria-hidden"=>"true", "class"=>"icon-facebook"}
+        = link_to user_omniauth_authorize_path(:twitter), class: 'navbar-brand' do
+          %span{"aria-hidden"=>"true", "class"=>"icon-twitter"}
+        = link_to user_omniauth_authorize_path(:vkontakte), class: 'navbar-brand' do
+          %span{"aria-hidden"=>"true", "class"=>"icon-VK"}
+
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'
