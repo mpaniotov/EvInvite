@@ -1,12 +1,12 @@
 //@font-face {
-//  font-family: aqua;
-//  src: font_url('/assets/fonts/aqua.ttf') format('truetype');
+// font-family: aqua;
+// src: font_url('/assets/fonts/aqua.ttf') format('truetype');
 //}
 body{
-//  font-family: aqua;
+  // font-family: aqua;
 }
 .container{
-//  margin-top:50px;
+  // margin-top:50px;
 
 }
 #slider {
@@ -21,7 +21,7 @@ body{
   font-family: "trebuchet ms", sans-serif;
 }
 .item{
-  background: #333;
+//  background: #333;
   text-align: center;
   height: 300px !important;
 }
@@ -36,4 +36,24 @@ body{
 }
 #logo{
   padding-left: 15px;
+}
+
+.carousel-inner{
+
+  background: -moz-linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 34%, rgba(214,214,214,1) 45%, rgba(212,212,212,1) 56%, rgba(217,217,217,1) 66%, rgba(255,255,255,1) 100%); /* ff3.6+ */
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(34%, rgba(224,224,224,1)), color-stop(45%, rgba(214,214,214,1)), color-stop(56%, rgba(212,212,212,1)), color-stop(66%, rgba(217,217,217,1)), color-stop(100%, rgba(255,255,255,1))); /* safari4+,chrome */
+  background: -webkit-linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 34%, rgba(214,214,214,1) 45%, rgba(212,212,212,1) 56%, rgba(217,217,217,1) 66%, rgba(255,255,255,1) 100%); /* safari5.1+,chrome10+ */
+  background: -o-linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 34%, rgba(214,214,214,1) 45%, rgba(212,212,212,1) 56%, rgba(217,217,217,1) 66%, rgba(255,255,255,1) 100%); /* opera 11.10+ */
+  background: -ms-linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 34%, rgba(214,214,214,1) 45%, rgba(212,212,212,1) 56%, rgba(217,217,217,1) 66%, rgba(255,255,255,1) 100%); /* ie10+ */
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(224,224,224,1) 34%, rgba(214,214,214,1) 45%, rgba(212,212,212,1) 56%, rgba(217,217,217,1) 66%, rgba(255,255,255,1) 100%); /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFFFFF', endColorstr='#FFFFFF',GradientType=1 ); /* ie6-9 */
+
+}
+.carousel-control.left{
+  background: none;
+  color:black;
+}
+.carousel-control.right{
+  background: none;
+  color:black;
 }
