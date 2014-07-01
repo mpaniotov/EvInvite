@@ -7,7 +7,6 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-
       = link_to root_path, class: 'navbar-brand' do
         %span{"aria-hidden"=>"true", "class"=>"icon-venue", id:"logo"}
     .navbar-header
@@ -22,7 +21,6 @@
           %span{"aria-hidden"=>"true", "class"=>"icon-twitter"}
         = link_to user_omniauth_authorize_path(:vkontakte), class: 'navbar-brand' do
           %span{"aria-hidden"=>"true", "class"=>"icon-VK"}
-
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         = render 'layouts/navigation_links'

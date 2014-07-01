@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  root :to => 'users#index'
+  root :to => 'events#index'
   devise_for :users, :controllers => { :omniauth_callbacks => 'users/omniauth_callbacks' }
+
+  get "test_events" => 'events#index',:defaults => { :format => 'json' }
 end

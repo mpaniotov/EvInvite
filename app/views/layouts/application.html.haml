@@ -12,5 +12,6 @@
   %body
     %header
       = render 'layouts/navigation'
-    = render 'layouts/messages'
-    = yield
+    .container
+      = render 'layouts/messages'
+      = yield

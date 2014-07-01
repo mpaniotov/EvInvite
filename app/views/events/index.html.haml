@@ -1,0 +1,13 @@
+%script{ type: 'text/template', id: 'library-template' }
+  .events
+
+
+%script{ type: 'text/template', id: 'event-template' }
+  %span.event-title
+    <%= title %>
+  %br
+  %span.event-message
+    <%= message %>
+  %br
+  =link_to "Read more","#"
+  %hr
