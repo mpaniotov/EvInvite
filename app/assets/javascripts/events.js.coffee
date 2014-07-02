@@ -53,19 +53,35 @@ $(document).ready ->
 
   library.fetch()
 
-  displayOnMap = (position) ->
-    marker = handler.addMarker(
-      lat: position.coords.latitude
-      lng: position.coords.longitude
-    )
-    handler.map.centerOn marker
-    return
+
   handler = Gmaps.build("Google")
   handler.buildMap
     internal:
-      id: "geolocation"
+      id: "multi_markers"
   , ->
-    navigator.geolocation.getCurrentPosition displayOnMap  if navigator.geolocation
+    markers = handler.addMarkers([
+      {
+        lat: 43
+        lng: 3.5
+      }
+      {
+        lat: 45
+        lng: 4
+      }
+      {
+        lat: 47
+        lng: 3.5
+      }
+      {
+        lat: 49
+        lng: 4
+      }
+      {
+        lat: 51
+        lng: 3.5
+      }
+    ])
+    handler.bounds.extendWith markers
+    handler.fitMapToBounds()
     return
-
 
