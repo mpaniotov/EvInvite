@@ -1,6 +1,6 @@
 -# navigation styled for Bootstrap 3.0
 %nav.navbar.navbar-default.navbar-fixed-top
-  .container
+  .container#header
     .navbar-header#home
       %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
         %span.sr-only Toggle navigation
@@ -11,9 +11,10 @@
         %span{"aria-hidden"=>"true", "class"=>"icon-venue", id:"logo"}
     .navbar-header
       - if current_user
-        %strong
-          = "Welcome, #{current_user.name}!"
-        = link_to "Sign out", destroy_user_session_path, :method => :delete
+        %span.navbar-brand#name
+          = current_user.name
+        = link_to destroy_user_session_path, class: 'navbar-brand', :method => :delete do
+          %span.glyphicon.glyphicon-log-out{data: {toggle:'tooltip'},title:'Sign out'}
       - else
         = link_to user_omniauth_authorize_path(:facebook), class: 'navbar-brand' do
           %span{"aria-hidden"=>"true", "class"=>"icon-facebook"}
