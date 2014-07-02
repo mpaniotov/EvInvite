@@ -3,10 +3,21 @@
 
 %script{ type: 'text/template', id: 'event-template' }
   %span.event-title
-    <%= title %>
+    %a{href:'#',class:'event-title'}
+      <%= title %>
   %br
   %span.event-message
     <%= message %>
   %br
-  =link_to "Read more","#"
+  %span.event-message
+    <%= start_time %>
+  %br
+  %span.read_more
+    start time •
+    =link_to "Read more","#", class:'read_more'
+  %img{alt:'event_img',src:'../img/none.png',id:'event-img'}
   %hr
+
+
+%div#map
+  #geolocation{:style => "width: 100%; height: 400px;"}

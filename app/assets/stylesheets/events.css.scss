@@ -4,10 +4,40 @@
 .library{
   padding: 0.1em 2%;
   display: block;
+//  display: inline-block;
+  width: 50%;
 }
 #body{
   padding-top:20px;
 }
-.navbar-header{
-  margin-top:0;
+.event-title:hover{
+  color:black;
+}
+.event-title{
+  color: #464646;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Open Sans',arial,sans-serif;
+  font-weight: 800;
+}
+.event-message{
+  font-family: 'Open Sans',arial,sans-serif;
+  padding-right: 100px;
+}
+
+.read_more{
+  font-family: courier,courier-new,monospace;
+  color: #999;
+}
+#event-img{
+  border-radius: 100%;
+//  display: inline-block;
+  float: right;
+  height: 80px;
+  margin-top: -65px;
+}
+#map{
+  width: 50%;
+  margin-top: 60px;
+  float: right;
 }

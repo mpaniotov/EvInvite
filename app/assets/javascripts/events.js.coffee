@@ -2,7 +2,6 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
-
   window.Event = Backbone.Model.extend()
 
   Events = Backbone.Collection.extend
@@ -53,3 +52,20 @@ $(document).ready ->
   $('.container').append(libraryView.render().el)
 
   library.fetch()
+
+  displayOnMap = (position) ->
+    marker = handler.addMarker(
+      lat: position.coords.latitude
+      lng: position.coords.longitude
+    )
+    handler.map.centerOn marker
+    return
+  handler = Gmaps.build("Google")
+  handler.buildMap
+    internal:
+      id: "geolocation"
+  , ->
+    navigator.geolocation.getCurrentPosition displayOnMap  if navigator.geolocation
+    return
+
+
