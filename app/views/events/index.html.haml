@@ -17,10 +17,10 @@
     %span.read_more
       start time •
       =link_to "Read more","#", class:'read_more'
-
     %hr
   -#- javascript_tag{id:'event-template'} do
   -#  var my_variable = #{title}
 
   %div#map
-    #geolocation{:style => "width: 100%; height: 400px;"}
+    #multi_markers{:style => "width: 100%; height: 400px;"}
+
