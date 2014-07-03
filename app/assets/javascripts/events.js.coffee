@@ -23,10 +23,12 @@ $(document).ready ->
 
   LibraryEventView = EventView.extend
     events: ->
-      'click .queue.add':'select'
+      'click .event-title':'select'
 
     select: ->
-      @collection.trigger('select', @model)
+      $('.event-message').not($(@el).find('.event-message')).hide('slow');
+      $(@el).find('.event-message').toggle('slow');
+
 
   LibraryView = Backbone.View.extend
     tagName: 'section'

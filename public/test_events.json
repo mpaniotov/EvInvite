@@ -1,7 +1,7 @@
 [
     {
         "title": "TestEvent1",
-        "message": "Event (computing), a software message indicating that something has happened, such as a keystroke or mouse click",
+        "message": "Event (computing), a software message indicating that something has happened, a software message indicating that something has happened, such as a keystroke or mouse click.",
         "location": "ZP",
         "start_time": "2014-06-26 14:31:14",
         "end_time": "2014-06-30 20:31:14",

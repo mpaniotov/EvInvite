@@ -4,14 +4,16 @@
 .library{
   padding: 0.1em 2%;
   display: block;
-//  display: inline-block;
   width: 50%;
 }
 #body{
   padding-top:20px;
+  height:100%;
+  background: white;
 }
 .event-title:hover{
   color:black;
+  cursor: pointer;
 }
 .event-title{
   color: #464646;
@@ -23,6 +25,7 @@
 .event-message{
   font-family: 'Open Sans',arial,sans-serif;
   padding-right: 100px;
+  display: none;
 }
 
 .read_more{
@@ -31,10 +34,8 @@
 }
 #event-img{
   border-radius: 100%;
-//  display: inline-block;
   float: right;
   height: 80px;
-  margin-top: -65px;
 }
 #map{
   width: 50%;

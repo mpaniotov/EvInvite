@@ -73,3 +73,12 @@ section {
   width: 30%;
   margin-top:50px;
 }
+html,body{
+  height:100%;
+  background: #f7f9f7;
+}
+
+  .navbar.navbar-default.navbar-fixed-top{
+    left: 375px;
+    right: 375px;
+  }
