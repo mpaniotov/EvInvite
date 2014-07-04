@@ -1,0 +1,7 @@
+.authform
+  = form_for(@user, :url => auth_completion_path, :method => :post, :html => { :role => 'form'}) do |f|
+    .form-group
+      = f.label :email
+      = f.email_field :email, :autofocus => true, class: 'form-control'
+      %br
+      = f.submit 'Complete authorization', :class => 'button right'
