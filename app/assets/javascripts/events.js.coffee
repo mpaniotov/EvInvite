@@ -26,8 +26,8 @@ $(document).ready ->
       'click .event-title':'select'
 
     select: ->
-      $('.event-message').not($(@el).find('.event-message')).hide('slow');
-      $(@el).find('.event-message').toggle('slow');
+      $('.event-message').not($(@el).find('.event-message')).stop().hide('slow');
+      $(@el).find('.event-message').stop().toggle('slow');
 
 
   LibraryView = Backbone.View.extend
