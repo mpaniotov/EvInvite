@@ -10,13 +10,15 @@
     %div.event-message
       <%= message %>
     %br
-    %span.start_time
-      <%= start_time %>
-
-    %br
     %span.read_more
-      start time •
-      =link_to "Read more","#", class:'read_more'
+      start time at •
+      %span.start_time
+      %br
+      end time at •
+      %span.end_time
+    %br
+    %span.show_map
+      Show on map
 
     %hr
   -#- javascript_tag{id:'event-template'} do

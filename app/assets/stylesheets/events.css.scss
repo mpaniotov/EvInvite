@@ -28,7 +28,7 @@
   display: none;
 }
 
-.read_more{
+.read_more,.show_map{
   font-family: courier,courier-new,monospace;
   color: #999;
 }
@@ -37,8 +37,13 @@
   float: right;
   height: 80px;
 }
+.show_map:hover{
+  color:black;
+  cursor: pointer;
+}
 #map{
   width: 50%;
   margin-top: 60px;
   float: right;
 }
+

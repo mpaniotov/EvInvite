@@ -19,6 +19,10 @@ $(document).ready ->
     render: ->
       renderedContent = @template(@model.toJSON())
       $(@el).html renderedContent
+      start_date = new Date(@model.get('start_time').replace(/-/g, "/"));
+      $(@el).find('.start_time').html start_date.strftime("%H:%M, %A %d %B %Y");
+      end_date = new Date(@model.get('end_time').replace(/-/g, "/"));
+      $(@el).find('.end_time').html end_date.strftime("%H:%M, %A %d %B %Y");
       this
 
   LibraryEventView = EventView.extend
@@ -28,7 +32,7 @@ $(document).ready ->
     select: ->
       $('.event-message').not($(@el).find('.event-message')).hide('slow');
       $(@el).find('.event-message').toggle('slow');
-
+      return
 
   LibraryView = Backbone.View.extend
     tagName: 'section'
