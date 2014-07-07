@@ -1,7 +1,10 @@
 [
     {
         "title": "TestEvent1",
-        "message": "Event (computing), a software message indicating that something has happened, a software message indicating that something has happened, such as a keystroke or mouse click.",
+        "message": "Event (computing), a software message indicating that something has happened, such as a keystroke or mouse click",
+        "location": "LV",
+        "latitude": 43,
+        "longitude": 3.5,
         "start_time": "2014-06-26 14:31:14",
         "end_time": "2014-06-30 20:31:14",
         "category_id": "1"
@@ -9,6 +12,9 @@
     {
         "title": "TestEvent2",
         "message": "Event (philosophy), an object in time, or an instantiation of a property in an object",
+        "location": "DP",
+        "latitude": 45,
+        "longitude": 4,
         "start_time": "2014-06-26 14:31:14",
         "end_time": "2014-06-30 20:31:14",
         "category_id": "2"
@@ -16,6 +22,9 @@
     {
         "title": "TestEvent3",
         "message": "Event (probability theory), a set of outcomes to which a probability is assigned",
+        "location": "LV",
+        "latitude": 49,
+        "longitude": 4,
         "start_time": "2014-06-26 14:31:14",
         "end_time": "2014-06-30 20:31:14",
         "category_id": "3"

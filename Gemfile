@@ -25,6 +25,8 @@ gem 'devise'
 gem "rails-backbone"
 gem 'gmaps4rails'
 gem "active_model_serializers"
+gem 'geocoder'
+gem 'carrierwave'
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller', :platforms=>[:mri_21]
