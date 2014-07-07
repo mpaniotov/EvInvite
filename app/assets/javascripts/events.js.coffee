@@ -28,10 +28,15 @@ $(document).ready ->
   LibraryEventView = EventView.extend
     events: ->
       'click .event-title':'select'
+      'click .delete-event':'delete'
 
     select: ->
-      $('.event-message').not($(@el).find('.event-message')).hide('slow');
-      $(@el).find('.event-message').toggle('slow');
+      $('.event-message').not($(@el).find('.event-message')).stop().hide('slow');
+      $(@el).find('.event-message').stop().toggle('slow');
+      return
+
+    delete: ->
+      $(@el).hide('slow');
       return
 
   LibraryView = Backbone.View.extend

@@ -1,27 +1,34 @@
--# navigation styled for Bootstrap 3.0
-%nav.navbar.navbar-default.navbar-fixed-top
-  .container#header
-    .navbar-header#home
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      = link_to root_path, class: 'navbar-brand' do
-        %span{"aria-hidden"=>"true", "class"=>"icon-venue", id:"logo"}
-    .navbar-header
-      - if current_user
-        %span.navbar-brand#name
-          = current_user.name
-        = link_to destroy_user_session_path, class: 'navbar-brand', :method => :delete do
-          %span.glyphicon.glyphicon-log-out{data: {toggle:'tooltip'},title:'Sign out'}
-      - else
-        = link_to user_omniauth_authorize_path(:facebook), class: 'navbar-brand' do
-          %span{"aria-hidden"=>"true", "class"=>"icon-facebook"}
-        = link_to user_omniauth_authorize_path(:twitter), class: 'navbar-brand' do
-          %span{"aria-hidden"=>"true", "class"=>"icon-twitter"}
-        = link_to user_omniauth_authorize_path(:vkontakte), class: 'navbar-brand' do
-          %span{"aria-hidden"=>"true", "class"=>"icon-VK"}
-    .collapse.navbar-collapse
-      %ul.nav.navbar-nav
-        = render 'layouts/navigation_links'
+.navbar.navbar-custom.navbar-fixed-top
+  .navbar-header
+    %a.navbar-brand{:href => "#"} Brand
+    %a.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse"}
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+  .navbar-collapse.collapse
+    %ul.nav.navbar-nav
+      %li.active
+        %a{:href => "#"} Home
+      %li
+        %a{:href => "#"} Link
+      %li
+        %a{:href => "#"} Link
+      %li &nbsp;
+    %form.navbar-form
+      .form-group{:style => "display:inline;"}
+        .input-group
+          .input-group-btn
+            %button.btn.btn-default.dropdown-toggle{"data-toggle" => "dropdown", :type => "button"}
+              %span.glyphicon.glyphicon-chevron-down
+            %ul.dropdown-menu
+              %li
+                %a{:href => "#"} Дискотека
+              %li
+                %a{:href => "#"} Клуб
+              %li
+                %a{:href => "#"} Вписка
+              %li
+                %a{:href => "#"} На природу
+          %input.form-control{:placeholder => "What are searching for?", :type => "text"}
+            %span.input-group-addon
+              %span.glyphicon.glyphicon-search

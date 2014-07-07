@@ -5,6 +5,7 @@
   %script{ type: 'text/template', id: 'event-template' }
     %span.event-title
       <%= title %>
+    %span.glyphicon.glyphicon-remove.pull-right.delete-event
     %img{alt:'event_img',src:'../img/none.png',id:'event-img'}
     %br
     %div.event-message
@@ -13,12 +14,6 @@
     %span.read_more
       start time at •
       %span.start_time
-      %br
-      end time at •
-      %span.end_time
-    %br
-    %span.show_map
-      Show on map
 
     %hr
   -#- javascript_tag{id:'event-template'} do
